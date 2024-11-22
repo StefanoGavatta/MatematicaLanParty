@@ -1,12 +1,12 @@
 extends Node
 
-const meteora = preload("res://Meteora/cavaliere.tscn")
+const meteora = preload("res://Cavalieri/cavaliere.tscn")
 @onready var timer: Timer = $Timer
 
 var asteroidi = []
 
 func selezioneWaitTime():
-	timer.wait_time = randi_range(4,10)
+	timer.wait_time = randi_range(1,2)
 
 func selezionaPosizione() -> Vector2:
 	return Vector2(randi_range(0,1168),0)

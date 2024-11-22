@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var Espressione
+var difficolta: int
 var velocità: int = 100
 var grandezza: Vector2
 var danno: int = 10
@@ -21,3 +21,6 @@ func _physics_process(delta: float) -> void:
 func distruggiAsteroide(): 
 	get_parent().asteroidi.erase(self)
 	queue_free()
+
+func assegnaValori():
+	
