@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d2slv17teqw3j" path="res://icon.svg" id="1_hsjjf"]
 [ext_resource type="PackedScene" uid="uid://dq4drko6yx7oy" path="res://bersaglio/bersaglio.tscn" id="2_mj5e8"]
-[ext_resource type="PackedScene" uid="uid://cajlkyphyie1g" path="res://Meteora/generatore_di_meteore.tscn" id="4_gn8x3"]
+[ext_resource type="PackedScene" uid="uid://cajlkyphyie1g" path="res://Cavalieri/generatore_di_cavalieri.tscn" id="4_gn8x3"]
 
 [node name="World" type="Node2D"]
 

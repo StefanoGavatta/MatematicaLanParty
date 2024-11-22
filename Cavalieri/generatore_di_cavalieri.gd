@@ -1,6 +1,6 @@
 extends Node
 
-const meteora = preload("res://Meteora/meteora.tscn")
+const meteora = preload("res://Meteora/cavaliere.tscn")
 @onready var timer: Timer = $Timer
 
 var asteroidi = []
