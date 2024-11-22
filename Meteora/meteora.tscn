@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctl0vvfcd3bg7"]
+
+[ext_resource type="Script" path="res://Meteora/meteora.gd" id="1_480kq"]
+[ext_resource type="Texture2D" uid="uid://d2slv17teqw3j" path="res://icon.svg" id="2_tm304"]
+[ext_resource type="Script" path="res://Meteora/genera_espressione.gd" id="3_cxwo5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s0dld"]
+radius = 48.0
+
+[node name="Meteora" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_480kq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.290196, 0.431373, 1)
+skew = 0.867429
+texture = ExtResource("2_tm304")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s0dld")
+
+[node name="GeneraEspressione" type="Node" parent="."]
+script = ExtResource("3_cxwo5")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cajlkyphyie1g"]
+
+[ext_resource type="Script" path="res://Meteora/generatore_di_meteore.gd" id="1_nvft8"]
+
+[node name="GeneratoreDiMeteore" type="Node"]
+script = ExtResource("1_nvft8")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

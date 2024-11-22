@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c875bsn04juyi"]
+
+[ext_resource type="Texture2D" uid="uid://d2slv17teqw3j" path="res://icon.svg" id="1_hsjjf"]
+[ext_resource type="PackedScene" uid="uid://dq4drko6yx7oy" path="res://bersaglio/bersaglio.tscn" id="2_mj5e8"]
+[ext_resource type="PackedScene" uid="uid://cajlkyphyie1g" path="res://Meteora/generatore_di_meteore.tscn" id="4_gn8x3"]
+
+[node name="World" type="Node2D"]
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(579, 586)
+scale = Vector2(9.625, 1)
+texture = ExtResource("1_hsjjf")
+
+[node name="Bersaglio" parent="." instance=ExtResource("2_mj5e8")]
+unique_name_in_owner = true
+position = Vector2(555, 342)
+
+[node name="GeneratoreDiMeteore" parent="." instance=ExtResource("4_gn8x3")]
