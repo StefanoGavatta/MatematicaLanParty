@@ -7,12 +7,17 @@
 [node name="World" type="Node2D"]
 
 [node name="Ground" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(579, 586)
 scale = Vector2(9.625, 1)
 texture = ExtResource("1_hsjjf")
 
 [node name="Bersaglio" parent="." instance=ExtResource("2_mj5e8")]
 unique_name_in_owner = true
-position = Vector2(555, 342)
+position = Vector2(552, 994)
 
 [node name="GeneratoreDiMeteore" parent="." instance=ExtResource("4_gn8x3")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(570, 668)
+zoom = Vector2(0.45, 0.45)

@@ -21,3 +21,15 @@ shape = SubResource("CircleShape2D_s0dld")
 
 [node name="GeneraEspressione" type="Node" parent="."]
 script = ExtResource("3_shj2x")
+
+[node name="Espressione" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 10.0
+
+[node name="Risultato" type="Label" parent="."]
+offset_left = -45.0
+offset_top = 52.0
+offset_right = -5.0
+offset_bottom = 75.0

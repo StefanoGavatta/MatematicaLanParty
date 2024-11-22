@@ -10,6 +10,8 @@ var risultato: int
 var target
 
 func _ready() -> void:
+	
+	assegnaValori()
 	target = bersaglio.position
 
 func _physics_process(delta: float) -> void:
@@ -23,4 +25,11 @@ func distruggiAsteroide():
 	queue_free()
 
 func assegnaValori():
+	match difficolta:
+		1:
+			velocità = 90
+		2:
+			velocità = 70
+		3: 
+			velocità = 40
 	
