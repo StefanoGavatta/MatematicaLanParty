@@ -1,6 +1,8 @@
 @icon("res://Icons/node/icon_beetle.png")
 extends Node
 
+#!!!IA per tesrtare le funzinalità!!!!
+
 @export var enable: bool = false
 @export var FireRate: float = 2
 

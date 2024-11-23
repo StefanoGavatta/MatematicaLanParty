@@ -29,6 +29,7 @@ unique_name_in_owner = true
 position = Vector2(588, 508)
 
 [node name="GeneratoreDiCavalieri" parent="." instance=ExtResource("4_gn8x3")]
+maxSpawn = 2
 
 [node name="Cavalieri" type="Node" parent="GeneratoreDiCavalieri"]
 
@@ -76,5 +77,4 @@ text = "Input"
 horizontal_alignment = 1
 
 [node name="AI" parent="." instance=ExtResource("6_6kvby")]
-enable = true
 FireRate = 1.5
