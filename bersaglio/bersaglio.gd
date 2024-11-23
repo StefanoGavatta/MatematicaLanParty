@@ -9,11 +9,9 @@ func prendiDanno(danno:int):
 	vita -= danno
 	progress_bar.value = vita
 
-
 func Esplodi():
 	if vita <= 0:
 		pass
-
 
 func _on_body_entered(body: Node2D) -> void:
 	prendiDanno(body.danno)

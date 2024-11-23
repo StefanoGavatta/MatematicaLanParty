@@ -4,11 +4,8 @@ extends Node
 const colpo = preload("res://Objects/colpo.tscn")
 
 @onready var cavalieri: Node = $"../GeneratoreDiCavalieri/Cavalieri"
-@onready var input: LineEdit = $"../Control/Input"
-@onready var testo_vis: Label = $"../Control/TestoVis"
-
-
-
+@onready var input: LineEdit = $"../Input/Input"
+@onready var testo_vis: Label = $"../Input/SkinInput"
 
 func _process(delta: float) -> void:
 	var cavalieriPresenti = cavalieri.get_children()
@@ -16,9 +13,7 @@ func _process(delta: float) -> void:
 		if input.text == str(cavalieriPresenti[i].risultato) && !cavalieriPresenti[i].indovinato:
 			cavalieriPresenti[i].indovinato = true
 			instanziaProiettile(cavalieriPresenti[i])
-			$"../Control".resetInput()
-
-
+			$"../Input".resetInput()
 
 func instanziaProiettile(nemico: CharacterBody2D):
 		var colpoINST = colpo.instantiate()
