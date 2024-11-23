@@ -9,15 +9,13 @@ func prendiDanno(danno:int):
 	vita -= danno
 	progress_bar.value = vita
 
-func sparaRazzo(Asteroide: Vector2):
-	print("sparato razzo direzione"+str(Asteroide))
-	
+
 func Esplodi():
 	if vita <= 0:
-		print("sconfitta")
+		pass
 
 
 func _on_body_entered(body: Node2D) -> void:
 	prendiDanno(body.danno)
-	body.distruggiCavaliere
+	body.distruggiCavaliere()
 	Esplodi()

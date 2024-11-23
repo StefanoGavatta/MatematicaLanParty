@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://tg4p2w58os6g"]
+
+[ext_resource type="Script" path="res://Objects/colpo.gd" id="1_25u4o"]
+[ext_resource type="Texture2D" uid="uid://d2slv17teqw3j" path="res://icon.svg" id="2_tqtom"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfyeb"]
+size = Vector2(18, 86)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpct0"]
+radius = 13.0
+
+[node name="Colpo" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_25u4o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, 7)
+scale = Vector2(0.15625, 0.6875)
+texture = ExtResource("2_tqtom")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_cfyeb")
+
+[node name="AutoDistruzione" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="Radar" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radar"]
+position = Vector2(0, -36)
+shape = SubResource("CircleShape2D_jpct0")
+
+[connection signal="timeout" from="AutoDistruzione" to="." method="_on_auto_distruzione_timeout"]
+[connection signal="body_entered" from="Radar" to="." method="_on_radar_body_entered"]

@@ -7,6 +7,7 @@ var grandezza: Vector2
 var danno: int = 10
 var risultato: int
 
+var indovinato: bool = false
 @onready var bersaglio:Area2D = get_parent().get_node("%Bersaglio")
 var target
 
@@ -27,9 +28,9 @@ func distruggiCavaliere():
 func assegnaValori():
 	match difficolta:
 		1:
-			velocità = 90
+			velocità = 100
 		2:
-			velocità = 70
+			velocità = 60
 		3: 
-			velocità = 40
+			velocità = 30
 	
