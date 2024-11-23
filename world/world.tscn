@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://c875bsn04juyi"]
+[gd_scene load_steps=9 format=3 uid="uid://c875bsn04juyi"]
 
 [ext_resource type="Texture2D" uid="uid://d2slv17teqw3j" path="res://icon.svg" id="1_hsjjf"]
 [ext_resource type="PackedScene" uid="uid://dq4drko6yx7oy" path="res://bersaglio/bersaglio.tscn" id="2_mj5e8"]
 [ext_resource type="PackedScene" uid="uid://cajlkyphyie1g" path="res://Cavalieri/generatore_di_cavalieri.tscn" id="4_gn8x3"]
 [ext_resource type="Script" path="res://Cavalieri/distruggi_cavalieri.gd" id="4_w7p5m"]
+[ext_resource type="Script" path="res://UI_GD/control.gd" id="5_cbnxs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snpet"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ui4o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbb7p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="World" type="Node2D"]
 
@@ -29,18 +39,37 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 650.0
+script = ExtResource("5_cbnxs")
 metadata/_edit_lock_ = true
 
 [node name="Input" type="LineEdit" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -76.0
-offset_top = -66.0
-offset_right = 70.0
-offset_bottom = -35.0
+offset_left = -78.0
+offset_top = -64.0
+offset_right = 81.0
+offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 0
+tooltip_text = "Input"
+theme_override_styles/focus = SubResource("StyleBoxFlat_snpet")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_1ui4o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xbb7p")
+alignment = 1
+selecting_enabled = false
+flat = true
+caret_blink = true
+
+[node name="SkinInput" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 586.0
+offset_right = 652.0
+offset_bottom = 617.0
+text = "Input"
+horizontal_alignment = 1

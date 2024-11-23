@@ -5,6 +5,10 @@ const colpo = preload("res://Objects/colpo.tscn")
 
 @onready var cavalieri: Node = $"../GeneratoreDiCavalieri/Cavalieri"
 @onready var input: LineEdit = $"../Control/Input"
+@onready var testo_vis: Label = $"../Control/TestoVis"
+
+
+
 
 func _process(delta: float) -> void:
 	var cavalieriPresenti = cavalieri.get_children()
@@ -12,9 +16,9 @@ func _process(delta: float) -> void:
 		if input.text == str(cavalieriPresenti[i].risultato) && !cavalieriPresenti[i].indovinato:
 			cavalieriPresenti[i].indovinato = true
 			instanziaProiettile(cavalieriPresenti[i])
-			resetInput()
-func resetInput():
-	input.text = ""
+			$"../Control".resetInput()
+
+
 
 func instanziaProiettile(nemico: CharacterBody2D):
 		var colpoINST = colpo.instantiate()
