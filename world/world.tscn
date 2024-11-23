@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c875bsn04juyi"]
+[gd_scene load_steps=5 format=3 uid="uid://c875bsn04juyi"]
 
 [ext_resource type="Texture2D" uid="uid://d2slv17teqw3j" path="res://icon.svg" id="1_hsjjf"]
 [ext_resource type="PackedScene" uid="uid://dq4drko6yx7oy" path="res://bersaglio/bersaglio.tscn" id="2_mj5e8"]
 [ext_resource type="PackedScene" uid="uid://cajlkyphyie1g" path="res://Cavalieri/generatore_di_cavalieri.tscn" id="4_gn8x3"]
+[ext_resource type="Script" path="res://Cavalieri/distruggi_cavalieri.gd" id="4_w7p5m"]
 
 [node name="World" type="Node2D"]
 
@@ -14,10 +15,32 @@ texture = ExtResource("1_hsjjf")
 
 [node name="Bersaglio" parent="." instance=ExtResource("2_mj5e8")]
 unique_name_in_owner = true
-position = Vector2(552, 994)
+position = Vector2(574, 479)
 
-[node name="GeneratoreDiMeteore" parent="." instance=ExtResource("4_gn8x3")]
+[node name="GeneratoreDiCavalieri" parent="." instance=ExtResource("4_gn8x3")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(570, 668)
-zoom = Vector2(0.45, 0.45)
+[node name="Cavalieri" type="Node" parent="GeneratoreDiCavalieri"]
+
+[node name="DistruggiCavalieri" type="Node" parent="."]
+script = ExtResource("4_w7p5m")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+metadata/_edit_lock_ = true
+
+[node name="Input" type="LineEdit" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_top = -66.0
+offset_right = 70.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0

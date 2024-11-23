@@ -1,3 +1,4 @@
+@icon("res://Icons/node_3D/icon_sword.png")
 extends CharacterBody2D
 
 var difficolta: int
@@ -20,8 +21,7 @@ func _physics_process(delta: float) -> void:
 
 #metodo chiamato per eliminare l'asteroide sia se hitta che se viene indovinato
 #si auto rimuove dall'array non lasciandio traccia
-func distruggiAsteroide(): 
-	get_parent().asteroidi.erase(self)
+func distruggiCavaliere(): 
 	queue_free()
 
 func assegnaValori():

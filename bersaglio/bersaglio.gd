@@ -1,3 +1,4 @@
+@icon("res://Icons/node_2D/icon_flag.png")
 extends Area2D
 
 @export var vita: int = 100
@@ -18,5 +19,5 @@ func Esplodi():
 
 func _on_body_entered(body: Node2D) -> void:
 	prendiDanno(body.danno)
-	body.distruggiAsteroide()
+	body.distruggiCavaliere
 	Esplodi()

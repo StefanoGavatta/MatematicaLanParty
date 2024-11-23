@@ -1,5 +1,6 @@
+@icon("res://Icons/node/icon_parchment.png")
+
 extends Node
-#var difficolta: int = randi_range(1,3)
 var difficolta = func():
 	var numeroID = randi_range(1,10)
 	if numeroID > 0 && numeroID <= 5:
@@ -17,7 +18,6 @@ var difficolta = func():
 
 func _ready() -> void:
 	difficolta = difficolta.call()
-	$"../Difficoltà".text = str(difficolta)
 	get_parent().difficolta = difficolta
 	calcolatore(AssemblaNumero(selezionaNumeri(difficolta)))
 
