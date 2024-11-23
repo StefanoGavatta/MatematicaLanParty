@@ -1,5 +1,13 @@
 extends Node
-var difficolta: int = randi_range(1,3)
+#var difficolta: int = randi_range(1,3)
+var difficolta = func():
+	var numeroID = randi_range(1,10)
+	if numeroID > 0 && numeroID <= 5:
+		return 1
+	elif numeroID > 5 && numeroID <= 8:
+		return 2
+	elif numeroID >= 9:
+		return 3
 
 @onready var espressione: Label = $"../Espressione"
 @onready var risultato: Label = $"../Risultato"
@@ -8,6 +16,8 @@ var difficolta: int = randi_range(1,3)
 @export var numeroMax: int = 12
 
 func _ready() -> void:
+	difficolta = difficolta.call()
+	$"../Difficoltà".text = str(difficolta)
 	get_parent().difficolta = difficolta
 	calcolatore(AssemblaNumero(selezionaNumeri(difficolta)))
 
