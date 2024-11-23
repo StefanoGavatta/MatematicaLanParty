@@ -20,4 +20,4 @@ func instanziaProiettile(nemico: CharacterBody2D):
 		colpoINST.position = %Bersaglio.position
 		colpoINST.direzione = nemico.position
 		colpoINST.bersaglio = nemico
-		get_parent().add_child(colpoINST)
+		add_child(colpoINST)

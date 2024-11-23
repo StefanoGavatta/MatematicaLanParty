@@ -1,3 +1,4 @@
+@icon("res://Icons/control/icon_text_panel.png")
 extends Control
 
 @onready var input: LineEdit = $Input

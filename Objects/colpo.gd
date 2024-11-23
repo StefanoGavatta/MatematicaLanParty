@@ -1,3 +1,4 @@
+@icon("res://Icons/node_2D/icon_bullet.png")
 extends CharacterBody2D
 
 var velocita = 600

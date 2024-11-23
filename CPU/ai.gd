@@ -1,3 +1,4 @@
+@icon("res://Icons/node/icon_beetle.png")
 extends Node
 
 @export var enable: bool = false

@@ -26,7 +26,7 @@ texture = ExtResource("1_hsjjf")
 
 [node name="Bersaglio" parent="." instance=ExtResource("2_mj5e8")]
 unique_name_in_owner = true
-position = Vector2(574, 470)
+position = Vector2(588, 508)
 
 [node name="GeneratoreDiCavalieri" parent="." instance=ExtResource("4_gn8x3")]
 
@@ -68,12 +68,13 @@ caret_blink = true
 
 [node name="SkinInput" type="Label" parent="Input"]
 layout_mode = 0
-offset_left = 497.0
-offset_top = 586.0
-offset_right = 652.0
-offset_bottom = 617.0
+offset_left = 509.0
+offset_top = 601.0
+offset_right = 664.0
+offset_bottom = 632.0
 text = "Input"
 horizontal_alignment = 1
 
 [node name="AI" parent="." instance=ExtResource("6_6kvby")]
 enable = true
+FireRate = 1.5
