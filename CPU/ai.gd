@@ -13,6 +13,7 @@ extends Node
 
 @onready var cavalieri: Node = $"../GeneratoreDiCavalieri/Cavalieri"
 
+var can_shoot:bool = true
 func _ready() -> void:
 	if enable:
 		timer.wait_time = FireRate
@@ -20,9 +21,12 @@ func _ready() -> void:
 
 
 func _on_timer_timeout() -> void:
+	can_shoot = true
 	fire()
 	
+	
 func fire():
-	if cavalieri.get_child_count() > 0:
+	if cavalieri.get_child_count() > 0 && can_shoot:
 		input.text = str(cavalieri.get_child(0).risultato)
+		can_shoot = false
 	

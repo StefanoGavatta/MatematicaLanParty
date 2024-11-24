@@ -7,10 +7,8 @@ var bersaglio: CharacterBody2D
 
 func _process(delta: float) -> void:
 	velocity = velocita * position.direction_to(direzione)
-	
-	# Update rotation based on velocity direction
 	if velocity.length() > 0:
-		rotation = velocity.angle() + deg_to_rad(90)  # Add 90 degrees if you want to point upwards
+		rotation = velocity.angle() + deg_to_rad(90)  
 	
 	move_and_slide()
 

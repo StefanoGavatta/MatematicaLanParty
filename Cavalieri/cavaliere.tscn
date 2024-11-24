@@ -33,10 +33,3 @@ offset_left = -45.0
 offset_top = 52.0
 offset_right = -5.0
 offset_bottom = 75.0
-
-[node name="Difficoltà" type="Label" parent="."]
-offset_left = 18.0
-offset_top = -71.0
-offset_right = 58.0
-offset_bottom = -48.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)

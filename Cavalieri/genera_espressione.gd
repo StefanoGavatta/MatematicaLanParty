@@ -89,10 +89,14 @@ func trovaX(numeri:Array):
 			var divisore = calcolati[indice+1]
 			var dividendo = calcolati[indice-1]
 			
-			# se la divisione non 
+			#se float ricalcoliamo restituendo zero perciò verrà ricreata per le regole
+			#messe in "verificaRisultato()"
 			if dividendo % divisore != 0:
 				return 0
 			
+			#vengono presi i numeri 1 posizione avanti e una indietro al segno
+			#e vengono confrontate secondo quest'ultimo per poi venire utto rimosso
+			#e lasciato un solo valore
 			var numero = dividendo / divisore
 			calcolati.remove_at(indice+1)
 			calcolati.remove_at(indice)
@@ -101,6 +105,7 @@ func trovaX(numeri:Array):
 		else:
 			break
 	
+	#calcoliamo il resto dei segni che non forniscono particolari problematiche
 	while "*" in calcolati:
 		var indice = calcolati.find("*")
 		if indice > 0 and indice < calcolati.size() - 1:
@@ -134,5 +139,5 @@ func trovaX(numeri:Array):
 				calcolati.insert(indice-1, numero)
 			else:
 				break
-	
+	#ritorna l'unico numero rimasto nell'array
 	return calcolati[0] if calcolati.size() > 0 else 0

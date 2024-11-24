@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c875bsn04juyi"]
+[gd_scene load_steps=11 format=3 uid="uid://c875bsn04juyi"]
 
 [ext_resource type="Texture2D" uid="uid://d2slv17teqw3j" path="res://icon.svg" id="1_hsjjf"]
 [ext_resource type="PackedScene" uid="uid://dq4drko6yx7oy" path="res://bersaglio/bersaglio.tscn" id="2_mj5e8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Cavalieri/distruggi_cavalieri.gd" id="4_w7p5m"]
 [ext_resource type="Script" path="res://UI_GD/control.gd" id="5_cbnxs"]
 [ext_resource type="PackedScene" uid="uid://c022srp45gink" path="res://CPU/ai.tscn" id="6_6kvby"]
+[ext_resource type="Script" path="res://DurataDebug/durata.gd" id="7_7ip13"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snpet"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -29,7 +30,7 @@ unique_name_in_owner = true
 position = Vector2(588, 508)
 
 [node name="GeneratoreDiCavalieri" parent="." instance=ExtResource("4_gn8x3")]
-maxSpawn = 2
+maxSpawn = 6.0
 
 [node name="Cavalieri" type="Node" parent="GeneratoreDiCavalieri"]
 
@@ -77,4 +78,18 @@ text = "Input"
 horizontal_alignment = 1
 
 [node name="AI" parent="." instance=ExtResource("6_6kvby")]
-FireRate = 1.5
+enable = true
+FireRate = 3.0
+
+[node name="Durata" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 602.0
+offset_right = 159.0
+offset_bottom = 632.0
+text = "Durata:"
+script = ExtResource("7_7ip13")
+
+[node name="Timer" type="Timer" parent="Durata"]
+autostart = true
+
+[connection signal="timeout" from="Durata/Timer" to="Durata" method="_on_timer_timeout"]
