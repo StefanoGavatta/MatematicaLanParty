@@ -27,7 +27,7 @@ texture = ExtResource("1_hsjjf")
 
 [node name="Bersaglio" parent="." instance=ExtResource("2_mj5e8")]
 unique_name_in_owner = true
-position = Vector2(588, 508)
+position = Vector2(576, 504)
 
 [node name="GeneratoreDiCavalieri" parent="." instance=ExtResource("4_gn8x3")]
 maxSpawn = 6.0
@@ -46,17 +46,16 @@ script = ExtResource("5_cbnxs")
 metadata/_edit_lock_ = true
 
 [node name="Input" type="LineEdit" parent="Input"]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -78.0
-offset_top = -64.0
-offset_right = 81.0
-offset_bottom = -33.0
+offset_left = -80.0
+offset_top = 25.0
+offset_right = 79.0
+offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 0
 tooltip_text = "Input"
@@ -64,16 +63,17 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_snpet")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_1ui4o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xbb7p")
 alignment = 1
+max_length = 3
+virtual_keyboard_type = 2
 selecting_enabled = false
-flat = true
 caret_blink = true
 
 [node name="SkinInput" type="Label" parent="Input"]
 layout_mode = 0
-offset_left = 509.0
-offset_top = 601.0
-offset_right = 664.0
-offset_bottom = 632.0
+offset_left = 500.0
+offset_top = 607.0
+offset_right = 655.0
+offset_bottom = 638.0
 text = "Input"
 horizontal_alignment = 1
 
@@ -91,5 +91,12 @@ script = ExtResource("7_7ip13")
 
 [node name="Timer" type="Timer" parent="Durata"]
 autostart = true
+
+[node name="Punteggio" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 571.0
+offset_right = 80.0
+offset_bottom = 594.0
+text = "Punteggio: "
 
 [connection signal="timeout" from="Durata/Timer" to="Durata" method="_on_timer_timeout"]

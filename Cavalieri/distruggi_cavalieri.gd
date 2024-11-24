@@ -16,6 +16,9 @@ func _process(delta: float) -> void:
 			istanziaProiettile(cavalieriPresenti[i])
 			$"../Input".resetInput()
 
+#!!DEBUG!!
+var cavalieriDistrutti = 0
+
 #crea il proiettile e gli da i valori
 func istanziaProiettile(nemico: CharacterBody2D):
 		var colpoINST = colpo.instantiate()
@@ -23,3 +26,8 @@ func istanziaProiettile(nemico: CharacterBody2D):
 		colpoINST.direzione = nemico.position
 		colpoINST.bersaglio = nemico
 		add_child(colpoINST)
+		
+		
+		#!!RIMUOVERE DOPO DEBUG!!
+		cavalieriDistrutti += 1
+		$"../Punteggio".text = "Punteggio: "+str(cavalieriDistrutti)
