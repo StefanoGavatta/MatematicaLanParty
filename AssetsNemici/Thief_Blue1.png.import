@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhf07yfh3nmt"
-path="res://.godot/imported/icon_map_2.png-6dc13242372a62fddfdf497bacf4c277.ctex"
+uid="uid://dfkbi4wpeouns"
+path="res://.godot/imported/Thief_Blue1.png-8ff9581b7aa946986e4599f0c194e696.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/color/icon_map_2.png"
-dest_files=["res://.godot/imported/icon_map_2.png-6dc13242372a62fddfdf497bacf4c277.ctex"]
+source_file="res://AssetsNemici/Thief_Blue1.png"
+dest_files=["res://.godot/imported/Thief_Blue1.png-8ff9581b7aa946986e4599f0c194e696.ctex"]
 
 [params]
 

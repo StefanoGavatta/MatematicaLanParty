@@ -1,23 +1,95 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctl0vvfcd3bg7"]
+[gd_scene load_steps=14 format=3 uid="uid://ctl0vvfcd3bg7"]
 
 [ext_resource type="Script" path="res://Cavalieri/cavaliere.gd" id="1_shwl3"]
-[ext_resource type="Texture2D" uid="uid://d2slv17teqw3j" path="res://icon.svg" id="2_3sycx"]
+[ext_resource type="Texture2D" uid="uid://cplkekgpciygk" path="res://AssetsNemici/SwordFighter_LongHair_Blue1.png" id="2_mn6hv"]
 [ext_resource type="Script" path="res://Cavalieri/genera_espressione.gd" id="3_shj2x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s0dld"]
-radius = 48.0
+radius = 9.48683
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpdr1"]
+atlas = ExtResource("2_mn6hv")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otj6v"]
+atlas = ExtResource("2_mn6hv")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqwmn"]
+atlas = ExtResource("2_mn6hv")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsfrj"]
+atlas = ExtResource("2_mn6hv")
+region = Rect2(96, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jgu3"]
+atlas = ExtResource("2_mn6hv")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65kl5"]
+atlas = ExtResource("2_mn6hv")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hjlp"]
+atlas = ExtResource("2_mn6hv")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5g1o"]
+atlas = ExtResource("2_mn6hv")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vuyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpdr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otj6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqwmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsfrj")
+}],
+"loop": false,
+"name": &"death",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jgu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65kl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hjlp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5g1o")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Cavaliere" type="CharacterBody2D"]
+scale = Vector2(1.64, 1.64)
 collision_layer = 2
 script = ExtResource("1_shwl3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 0.290196, 0.431373, 1)
-skew = 0.867429
-texture = ExtResource("2_3sycx")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_s0dld")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0vuyo")
+animation = &"death"
+autoplay = "walk"
+frame = 3
+frame_progress = 1.0
 
 [node name="GeneraEspressione" type="Node" parent="."]
 script = ExtResource("3_shj2x")

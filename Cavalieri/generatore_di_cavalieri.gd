@@ -10,7 +10,8 @@ func selezioneWaitTime():#seleziona il tempo di spawn cavalieri
 	timer.wait_time = randf_range(minSpawn,maxSpawn)
 
 func selezionaPosizione() -> Vector2:
-	return Vector2(randi_range(0,1168),0)
+	var posizioni = $Posizioni.get_children()
+	return posizioni.pick_random().position
 	
 
 func summonMeteorite():#istanzia e crea il nemico

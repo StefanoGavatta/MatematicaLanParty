@@ -21,7 +21,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 #metodo chiamato per eliminare l'asteroide sia se hitta che se viene indovinato
-func distruggiCavaliere(): 
+func distruggiCavaliere():
+	 
 	queue_free()
 
 #in base alla difficoltà decide se andare + lento 

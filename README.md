@@ -3,4 +3,11 @@
 
 # accorgimenti
 il gioco inizialmente doveva presentare le meteore quindi alcune funzioni
-o v ariabile riportano questo nome, non avevo vogli di cambiarle
+o variabile riportano questo nome, non avevo voglia di cambiarle
+
+# Auto giocatore
+il gioco presenta un giocatore automatico per testare le varie funzionalità.
+per disabilitare il giocatore automatico selezionare nell'ispettore dei nodi 
+(sotto "world") il nodo "AI" e nell'ispettore delle proprietà 
+disabilitare la voce "enable" (se attiva).
+oppure modificare il fireRate con la voce "FireRate".

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btr3fmjcs373q"
-path="res://.godot/imported/icon_weapon.png-f90fa243c7622e9acedac8901e7adc58.ctex"
+uid="uid://cplkekgpciygk"
+path="res://.godot/imported/SwordFighter_LongHair_Blue1.png-9ab5ff177ebf3bfc2cd39117ed3fb547.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/color/icon_weapon.png"
-dest_files=["res://.godot/imported/icon_weapon.png-f90fa243c7622e9acedac8901e7adc58.ctex"]
+source_file="res://AssetsNemici/SwordFighter_LongHair_Blue1.png"
+dest_files=["res://.godot/imported/SwordFighter_LongHair_Blue1.png-9ab5ff177ebf3bfc2cd39117ed3fb547.ctex"]
 
 [params]
 

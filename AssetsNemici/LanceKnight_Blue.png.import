@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blnan3p7q682n"
-path="res://.godot/imported/icon_life_bar.png-768b43af6d74c81d0a88fe2fb9881ca3.ctex"
+uid="uid://bg2qp4ehef70v"
+path="res://.godot/imported/LanceKnight_Blue.png-a3ffbac68b7718489772a05b4f7092e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/color/icon_life_bar.png"
-dest_files=["res://.godot/imported/icon_life_bar.png-768b43af6d74c81d0a88fe2fb9881ca3.ctex"]
+source_file="res://AssetsNemici/LanceKnight_Blue.png"
+dest_files=["res://.godot/imported/LanceKnight_Blue.png-a3ffbac68b7718489772a05b4f7092e4.ctex"]
 
 [params]
 
