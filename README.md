@@ -11,3 +11,6 @@ per disabilitare il giocatore automatico selezionare nell'ispettore dei nodi
 (sotto "world") il nodo "AI" e nell'ispettore delle proprietà 
 disabilitare la voce "enable" (se attiva).
 oppure modificare il fireRate con la voce "FireRate".
+
+# grafiche 
+https://mattwalkden.itch.io/fantasy-battle-pack
