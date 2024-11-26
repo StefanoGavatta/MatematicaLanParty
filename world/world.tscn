@@ -27,7 +27,7 @@ texture = ExtResource("1_hsjjf")
 
 [node name="Bersaglio" parent="." instance=ExtResource("2_mj5e8")]
 unique_name_in_owner = true
-position = Vector2(576, 504)
+position = Vector2(576, 528)
 
 [node name="GeneratoreDiCavalieri" parent="." instance=ExtResource("4_gn8x3")]
 maxSpawn = 6.0
@@ -69,11 +69,17 @@ selecting_enabled = false
 caret_blink = true
 
 [node name="SkinInput" type="Label" parent="Input"]
-layout_mode = 0
-offset_left = 500.0
-offset_top = 607.0
-offset_right = 655.0
-offset_bottom = 638.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -77.5
+offset_top = -31.0
+offset_right = 77.5
+grow_horizontal = 2
+grow_vertical = 0
 text = "Input"
 horizontal_alignment = 1
 
