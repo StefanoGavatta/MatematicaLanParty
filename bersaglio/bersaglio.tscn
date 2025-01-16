@@ -21,7 +21,6 @@ script = ExtResource("1_ahdug")
 texture = ExtResource("1_j3d11")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_i1m11")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]

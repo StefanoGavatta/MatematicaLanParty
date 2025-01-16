@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 	var cavalieriPresenti = cavalieri.get_children()
 	for i in range(len(cavalieriPresenti)):
 		if input.text == str(cavalieriPresenti[i].risultato) && !cavalieriPresenti[i].indovinato:
-			cavalieriPresenti[i].indovinato = true
+			cavalieriPresenti[i].indovinatoMet()
+			cavalieriPresenti[i].velocità = cavalieriPresenti[i].velocità / 2
 			istanziaProiettile(cavalieriPresenti[i])
 			$"../Input".resetInput()
 

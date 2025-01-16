@@ -1,7 +1,7 @@
 @icon("res://Icons/node_2D/icon_bullet.png")
 extends CharacterBody2D
 
-var velocita = 600
+var velocita = 900
 var direzione: Vector2 = Vector2(0,0)
 var bersaglio: CharacterBody2D
 

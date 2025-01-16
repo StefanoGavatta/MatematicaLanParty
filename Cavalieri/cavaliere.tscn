@@ -76,9 +76,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Cavaliere" type="CharacterBody2D"]
+[node name="Cavaliere" type="CharacterBody2D" groups=["nemico"]]
 scale = Vector2(1.64, 1.64)
 collision_layer = 2
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_shwl3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -106,3 +108,7 @@ offset_left = -45.0
 offset_top = 52.0
 offset_right = -5.0
 offset_bottom = 75.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+debug_enabled = true

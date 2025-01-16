@@ -58,10 +58,16 @@ func calcolatore(numeri:Array):
 			espressione.text += str(nuoviNumeri[i])
 	else: #altrimenti userà quella base
 		for i in len(numeri): 
+			
+			
 			espressione.text += str(numeri[i])
 			
 	risultato.text = str(get_parent().risultato) #!!!!!! debug !!!
 	
+	#var operazioni = FileAccess.open("res://operazioni.txt", FileAccess.READ_WRITE)
+	#operazioni.seek_end()
+	#operazioni.store_string(espressione.text + " = "+ risultato.text + "\n")
+	#operazioni.close()
 	queue_free() #si autodistrugge perchè ormai inutile
 
 

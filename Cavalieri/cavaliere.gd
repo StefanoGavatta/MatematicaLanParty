@@ -11,14 +11,34 @@ var indovinato: bool = false
 @onready var bersaglio:Area2D = get_parent().get_node("%Bersaglio")
 var target
 
+@onready var nav: NavigationAgent2D = $NavigationAgent2D
+
 func _ready() -> void:
 	
 	assegnaValori()
 	target = bersaglio.position
-
+	
+	
 func _physics_process(delta: float) -> void:
-	velocity = position.direction_to(target) * velocità
+
+	# Add the gravity
+	var direction = Vector3()
+	nav.target_position = bersaglio.global_position
+	# Wait for map synchronization
+	#var timer = get_tree().create_timer(0.1, true)
+	#await timer.timeout
+	
+	
+	
+	direction = nav.get_next_path_position() - global_position
+	direction = direction.normalized()
+	
+	velocity = velocity.lerp(direction * velocità, 8 * delta)
+	
 	move_and_slide()
+	
+	#velocity = position.direction_to(target) * velocità
+	#move_and_slide()
 
 #metodo chiamato per eliminare l'asteroide sia se hitta che se viene indovinato
 func distruggiCavaliere():
@@ -35,3 +55,8 @@ func assegnaValori():
 		3: 
 			velocità = 30
 	
+
+func indovinatoMet():
+	indovinato = true
+	await get_tree().create_timer(4).timeout
+	queue_free()

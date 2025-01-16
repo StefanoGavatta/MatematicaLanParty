@@ -21,6 +21,10 @@ window/size/viewport_width=1200
 window/size/always_on_top=true
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+nemico=""
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
