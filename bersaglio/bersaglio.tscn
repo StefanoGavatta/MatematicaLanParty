@@ -1,7 +1,44 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq4drko6yx7oy"]
+[gd_scene load_steps=12 format=3 uid="uid://dq4drko6yx7oy"]
 
 [ext_resource type="Script" path="res://bersaglio/bersaglio.gd" id="1_ahdug"]
-[ext_resource type="Texture2D" uid="uid://d2slv17teqw3j" path="res://icon.svg" id="1_j3d11"]
+[ext_resource type="Texture2D" uid="uid://cph3ogdblskql" path="res://bersaglio/arco_sprite-Sheet.png" id="2_4k1nj"]
+[ext_resource type="Texture2D" uid="uid://c0g0pg17stjft" path="res://bersaglio/freccia_sprite.png" id="3_j4sbx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr1xb"]
+atlas = ExtResource("2_4k1nj")
+region = Rect2(0, 0, 65, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu8xe"]
+atlas = ExtResource("2_4k1nj")
+region = Rect2(65, 0, 65, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5w3g"]
+atlas = ExtResource("2_4k1nj")
+region = Rect2(130, 0, 65, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8kg5"]
+atlas = ExtResource("2_4k1nj")
+region = Rect2(195, 0, 65, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ti6ac"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr1xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu8xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5w3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8kg5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i1m11"]
 radius = 70.0286
@@ -17,11 +54,23 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_ahdug")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_j3d11")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 10
+scale = Vector2(2.135, 2.135)
+sprite_frames = SubResource("SpriteFrames_ti6ac")
+frame = 3
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 9
+position = Vector2(-3, -4)
+rotation = -0.785398
+scale = Vector2(2.54895, 2.36041)
+texture = ExtResource("3_j4sbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_i1m11")
+metadata/_edit_lock_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -64.0

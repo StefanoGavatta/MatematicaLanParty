@@ -56,7 +56,7 @@ func assegnaValori():
 			velocità = 30
 	
 
-func indovinatoMet():
-	indovinato = true
-	await get_tree().create_timer(4).timeout
-	queue_free()
+#func indovinatoMet():
+	#indovinato = true
+	#await get_tree().create_timer(4).timeout
+	#queue_free()
