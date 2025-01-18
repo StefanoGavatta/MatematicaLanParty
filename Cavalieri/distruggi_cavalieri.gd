@@ -15,16 +15,22 @@ func _process(delta: float) -> void:
 	for i in range(len(cavalieriPresenti)):
 		if input.text == str(cavalieriPresenti[i].risultato) && !cavalieriPresenti[i].indovinato:
 			bersaglio_sprite.look_at(cavalieriPresenti[i].global_position)
+			bersaglio_sprite.rotation += deg_to_rad(90)
 			freccia.look_at(cavalieriPresenti[i].global_position)
-			$"../Input".resetInput()
-			istanziaProiettile(cavalieriPresenti[i])
-			cavalieriPresenti[i].indovinato =  true
-			cavalieriPresenti[i].velocità = cavalieriPresenti[i].velocità / 2
-			if !bersaglio_sprite.is_playing():
-				bersaglio_sprite.play("default")
-				freccia.visible = false
-				await bersaglio_sprite.animation_finished
-				freccia.visible = true
+			freccia.rotation += deg_to_rad(45)
+			await get_tree().create_timer(0.25).timeout
+			if is_instance_valid(cavalieriPresenti[i]):
+				if input.text == str(cavalieriPresenti[i].risultato) && !cavalieriPresenti[i].indovinato:
+					
+					$"../Input".resetInput()
+					istanziaProiettile(cavalieriPresenti[i])
+					cavalieriPresenti[i].indovinato =  true
+					cavalieriPresenti[i].velocità = cavalieriPresenti[i].velocità / 2
+					if !bersaglio_sprite.is_playing():
+						bersaglio_sprite.play("default")
+						freccia.visible = false
+						await bersaglio_sprite.animation_finished
+						freccia.visible = true
 
 				
 

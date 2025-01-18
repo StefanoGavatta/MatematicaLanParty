@@ -42,7 +42,11 @@ func _physics_process(delta: float) -> void:
 
 #metodo chiamato per eliminare l'asteroide sia se hitta che se viene indovinato
 func distruggiCavaliere():
-	 
+	$Espressione.visible = false
+	$Risultato.visible = false
+	set_physics_process(false)
+	$AnimatedSprite2D.play("death")
+	await $AnimatedSprite2D.animation_finished
 	queue_free()
 
 #in base alla difficoltà decide se andare + lento 

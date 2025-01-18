@@ -16,5 +16,5 @@ func Esplodi():
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("nemico"):
 		prendiDanno(body.danno)
-		body.distruggiCavaliere()
+		body.queue_free()
 		Esplodi()
