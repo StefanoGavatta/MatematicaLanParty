@@ -14,3 +14,6 @@ oppure modificare il fireRate con la voce "FireRate".
 
 # grafiche 
 https://mattwalkden.itch.io/fantasy-battle-pack
+
+# gioco su itch.io
+https://gavats.itch.io/matematicagioco
