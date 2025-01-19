@@ -15,14 +15,10 @@ func _process(delta: float) -> void:
 	for i in range(len(cavalieriPresenti)):
 		if is_instance_valid(cavalieriPresenti[i]):
 			if input.text == str(cavalieriPresenti[i].risultato) && !cavalieriPresenti[i].indovinato:
-				bersaglio_sprite.look_at(cavalieriPresenti[i].global_position)
-				bersaglio_sprite.rotation += deg_to_rad(90)
-				freccia.look_at(cavalieriPresenti[i].global_position)
-				freccia.rotation += deg_to_rad(45)
+				arcoSparo(cavalieriPresenti[i].global_position)
 				await get_tree().create_timer(0.25).timeout
 				if is_instance_valid(cavalieriPresenti[i]):
 					if input.text == str(cavalieriPresenti[i].risultato) && !cavalieriPresenti[i].indovinato:
-						
 						$"../Input".resetInput()
 						istanziaProiettile(cavalieriPresenti[i])
 						cavalieriPresenti[i].indovinato =  true
@@ -31,6 +27,7 @@ func _process(delta: float) -> void:
 							bersaglio_sprite.play("default")
 							freccia.visible = false
 							await bersaglio_sprite.animation_finished
+							$loading.play()
 							freccia.visible = true
 
 				
@@ -43,6 +40,7 @@ var cavalieriDistrutti = 0
 
 #crea il proiettile e gli da i valori
 func istanziaProiettile(nemico: CharacterBody2D):
+	$sparo.play()
 	print("colpo istanziato")
 	var colpoINST = colpo.instantiate()
 	colpoINST.position = %Bersaglio.position
@@ -54,3 +52,10 @@ func istanziaProiettile(nemico: CharacterBody2D):
 	#!!RIMUOVERE DOPO DEBUG!!
 	cavalieriDistrutti += 1
 	$"../Punteggio".text = "Punteggio: "+str(cavalieriDistrutti)
+
+func arcoSparo(bersaglio: Vector2):
+	bersaglio_sprite.look_at(bersaglio)
+	bersaglio_sprite.rotation += deg_to_rad(90)
+	freccia.look_at(bersaglio)
+	freccia.rotation += deg_to_rad(45)
+	

@@ -1,12 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://c875bsn04juyi"]
+[gd_scene load_steps=16 format=3 uid="uid://c875bsn04juyi"]
 
 [ext_resource type="PackedScene" uid="uid://dq4drko6yx7oy" path="res://bersaglio/bersaglio.tscn" id="2_mj5e8"]
 [ext_resource type="PackedScene" uid="uid://cajlkyphyie1g" path="res://Cavalieri/generatore_di_cavalieri.tscn" id="4_gn8x3"]
 [ext_resource type="Script" path="res://Cavalieri/distruggi_cavalieri.gd" id="4_w7p5m"]
+[ext_resource type="AudioStream" uid="uid://sonxodcomwa4" path="res://Sound/bow-and-arrow-shoot-sound-effect-2-239699.mp3" id="5_am2fe"]
 [ext_resource type="Script" path="res://UI_GD/control.gd" id="5_cbnxs"]
 [ext_resource type="PackedScene" uid="uid://c022srp45gink" path="res://CPU/ai.tscn" id="6_6kvby"]
+[ext_resource type="AudioStream" uid="uid://d3guepc828kyo" path="res://Sound/bow-loading-38752.mp3" id="6_ayhtc"]
 [ext_resource type="Script" path="res://DurataDebug/durata.gd" id="7_7ip13"]
+[ext_resource type="Script" path="res://world/h_scroll_bar.gd" id="8_kpfjt"]
 [ext_resource type="Texture2D" uid="uid://bcww050jsovbj" path="res://world/mappacool.png" id="8_vmacn"]
+[ext_resource type="AudioStream" uid="uid://b08ha645y0emf" path="res://Music/dungeon combact (1).mp3" id="10_l37q2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kxrym"]
 vertices = PackedVector2Array(788.422, 643.961, 450.547, 643.117, 562.789, 471.227, 653.961, 493.344, 681.43, 515.82, 1088.35, 461.789, 1154.05, 396.078, 1191.57, 375.547, 1192.58, 458.148, 1131.76, 521, 994.57, 444.352, 1004.16, 521, 860.492, 419.75, 939.773, 398.141, 11, 203.867, 11, 142.297, 345.906, 158.43, 342.797, 174.031, 330.633, 199.969, 907.742, 324.773, 823.594, 305.039, 816.313, 189.508, 880.422, 252.594, 748.867, 245.938, 711.773, 166.328, 443.203, 232.781, 415.578, 249.258, 468.203, 313.219, 492.883, 258.133, 536, 275.141, 599.328, 332.469, 591.422, 364.094, 747.961, 14.7109, 814, 12.3594, 826.602, 12.3828, 832.93, 85.6406, 714.797, 508.391)
@@ -50,10 +54,12 @@ texture = ExtResource("8_vmacn")
 
 [node name="Bersaglio" parent="." instance=ExtResource("2_mj5e8")]
 unique_name_in_owner = true
-position = Vector2(624, 574)
+position = Vector2(624, 544)
 scale = Vector2(0.7, 0.7)
 
 [node name="GeneratoreDiCavalieri" parent="." instance=ExtResource("4_gn8x3")]
+minSpawn = 3.0
+maxSpawn = 6.0
 
 [node name="Posizioni" type="Node2D" parent="GeneratoreDiCavalieri"]
 
@@ -71,6 +77,14 @@ position = Vector2(1180, 432)
 [node name="DistruggiCavalieri" type="Node" parent="."]
 script = ExtResource("4_w7p5m")
 
+[node name="sparo" type="AudioStreamPlayer" parent="DistruggiCavalieri"]
+stream = ExtResource("5_am2fe")
+volume_db = -0.735
+
+[node name="loading" type="AudioStreamPlayer" parent="DistruggiCavalieri"]
+stream = ExtResource("6_ayhtc")
+volume_db = 6.414
+
 [node name="Input" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -82,14 +96,14 @@ metadata/_edit_lock_ = true
 [node name="Input" type="LineEdit" parent="Input"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.526087
-anchor_top = 1.02615
-anchor_right = 0.526087
-anchor_bottom = 1.02615
-offset_left = -80.0
-offset_top = 25.0
-offset_right = 79.0
-offset_bottom = 56.0
+anchor_left = 0.543
+anchor_top = 1.002
+anchor_right = 0.543
+anchor_bottom = 1.002
+offset_left = -45.4501
+offset_top = 30.7
+offset_right = 113.55
+offset_bottom = 61.7
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.615, 0.615)
@@ -107,21 +121,43 @@ metadata/_edit_use_anchors_ = true
 [node name="SkinInput" type="Label" parent="Input"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.501304
-anchor_top = 1.00154
-anchor_right = 0.501304
+anchor_left = 0.543913
+anchor_top = 0.998462
+anchor_right = 0.543913
 anchor_bottom = 1.00154
 offset_left = -77.5
 offset_top = -31.0
 offset_right = 77.5
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 20
 text = "Input"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Label" type="Label" parent="Input"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 486.0
+offset_right = 146.0
+offset_bottom = 543.0
+text = "DEBUG (scorrere
+per cambiare)
+vel. spawn MIN:"
+vertical_alignment = 2
+
+[node name="HScrollBar" type="HScrollBar" parent="Input"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 544.0
+offset_right = 109.0
+offset_bottom = 552.0
+min_value = 1.0
+max_value = 10.0
+value = 6.775
+script = ExtResource("8_kpfjt")
+
 [node name="AI" parent="." instance=ExtResource("6_6kvby")]
-enable = true
 FireRate = 4.0
 
 [node name="Durata" type="Label" parent="."]
@@ -130,6 +166,7 @@ offset_top = 602.0
 offset_right = 159.0
 offset_bottom = 632.0
 scale = Vector2(0.615, 0.615)
+theme_override_font_sizes/font_size = 32
 text = "Durata:"
 script = ExtResource("7_7ip13")
 metadata/_edit_use_anchors_ = true
@@ -143,9 +180,15 @@ offset_top = 571.0
 offset_right = 80.0
 offset_bottom = 594.0
 scale = Vector2(0.615, 0.615)
+theme_override_font_sizes/font_size = 32
 text = "Punteggio: "
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_l37q2")
+volume_db = -20.489
+autoplay = true
+parameters/looping = true
 
+[connection signal="value_changed" from="Input/HScrollBar" to="Input/HScrollBar" method="_on_value_changed"]
 [connection signal="timeout" from="Durata/Timer" to="Durata" method="_on_timer_timeout"]

@@ -5,8 +5,8 @@ extends Node
 @export var numeroMin: int = 1
 @export var numeroMax: int = 12
 
-@onready var espressione: Label = $"../Espressione"
-@onready var risultato: Label = $"../Risultato"
+@onready var espressione: Label = $"../Control/Espressione"
+@onready var risultato: Label = $"../Control/Risultato"
 
 # Difficulty levels and their probabilities
 var difficulty_ranges = {

@@ -14,7 +14,8 @@ var target
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 
 func _ready() -> void:
-	
+	$sounds/scream.pitch_scale = randf_range(0.75,1.40)
+	$sounds/scream.play()
 	assegnaValori()
 	target = bersaglio.position
 	
@@ -42,8 +43,10 @@ func _physics_process(delta: float) -> void:
 
 #metodo chiamato per eliminare l'asteroide sia se hitta che se viene indovinato
 func distruggiCavaliere():
-	$Espressione.visible = false
-	$Risultato.visible = false
+	$AnimationPlayer.play("flash")
+	$sounds/morte.play()
+	$Control/Espressione.visible = false
+	$Control/Risultato.visible = false
 	set_physics_process(false)
 	$AnimatedSprite2D.play("death")
 	await $AnimatedSprite2D.animation_finished
@@ -64,3 +67,11 @@ func assegnaValori():
 	#indovinato = true
 	#await get_tree().create_timer(4).timeout
 	#queue_free()
+
+
+func _on_soundeffect_timeout() -> void:
+	print("ciao")
+	$sounds/walk.pitch_scale = randf_range(0.80,1.20)
+	$sounds/walk.play()
+	$sounds/soundeffect.wait_time = randi_range(5,12)
+	
