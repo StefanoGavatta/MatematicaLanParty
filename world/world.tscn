@@ -54,7 +54,6 @@ position = Vector2(624, 574)
 scale = Vector2(0.7, 0.7)
 
 [node name="GeneratoreDiCavalieri" parent="." instance=ExtResource("4_gn8x3")]
-minSpawn = 2.0
 
 [node name="Posizioni" type="Node2D" parent="GeneratoreDiCavalieri"]
 
@@ -122,7 +121,8 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AI" parent="." instance=ExtResource("6_6kvby")]
-FireRate = 2.5
+enable = true
+FireRate = 4.0
 
 [node name="Durata" type="Label" parent="."]
 offset_left = 15.0
