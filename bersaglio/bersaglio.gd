@@ -14,7 +14,7 @@ func prendiDanno(danno:int):
 func Esplodi():
 	if vita <= 0:
 		$flash.play("RESET")
-		get_tree().reload_current_scene()
+		$"..".vittoria = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("nemico"):

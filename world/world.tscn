@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://c875bsn04juyi"]
+[gd_scene load_steps=17 format=3 uid="uid://c875bsn04juyi"]
 
+[ext_resource type="Script" path="res://world/TerminaPartita.gd" id="1_7na4o"]
 [ext_resource type="PackedScene" uid="uid://dq4drko6yx7oy" path="res://bersaglio/bersaglio.tscn" id="2_mj5e8"]
 [ext_resource type="PackedScene" uid="uid://cajlkyphyie1g" path="res://Cavalieri/generatore_di_cavalieri.tscn" id="4_gn8x3"]
 [ext_resource type="Script" path="res://Cavalieri/distruggi_cavalieri.gd" id="4_w7p5m"]
@@ -27,6 +28,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_7na4o")
 
 [node name="Tilemaps" type="Node2D" parent="."]
 
